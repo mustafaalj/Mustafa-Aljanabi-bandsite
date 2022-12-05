@@ -1,0 +1,16 @@
+@use '../partials/versions' as *;
+
+//tablet
+@mixin tablet {
+    @media (min-width: $tablet-width)  {
+        @content ;
+    }
+    
+}
+//Desktop
+@mixin desktop {
+    @media (min-width: $desktop-width)  {
+        @content;
+    }
+    
+}
