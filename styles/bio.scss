@@ -1,357 +1,409 @@
-@use '../styles/partials/mixins' as *;
-@use '../styles/partials/versions' as *;
-
-
-html {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/versions" as *;
+@font-face {
+  font-family: "avenir";
+  src: url(../assets/Font/AvenirNextLTPro-Regular.otf);
 }
 
-body {
-    margin: 0px;
-
+html {
+  font-size: 10px;
+  font-family: "avenir";
 }
 
 .text {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  //tablet
+  @include tablet {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+
+  &__header {
+    color: $primary-white;
+    position: absolute;
+    top: 50%;
+    left: 4%;
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 700;
     //tablet
     @include tablet {
-        font-size: 3.6rem;
-        line-height: 4.4rem;
+      font-size: 6rem;
+      line-height: 6.8rem;
+      font-weight: 700;
+    }
+    @include desktop {
+      font-size: 6rem;
+      line-height: 6.8rem;
+      font-weight: 700;
+    }
+  }
 
-     &--header {
-        color: $primary-white;
-        position: absolute;
-        top: 50%;
-        left: 4%;
-        font-size: 2.4rem;
-        line-height: 3.2rem;
-        font-weight: 700;
-        //tablet 
-        @include tablet {
-            font-size: 6rem;
-            line-height: 6.8rem;
-            font-weight: 700;
-        }
-        @include  desktop {
-            font-size: 6rem;
-            line-height: 6.8rem;
-            font-weight: 700;
-        }
-     }
-    
+  &--links {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 100;
+    color: $primary-white;
+    text-decoration: none;
+
+    //tablet
+    @include tablet {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  &--white {
+    color: $primary-white;
+    padding: 0 1.6rem 0 1.6rem;
+  }
+
+  &--black {
+    color: $primary-black;
+    padding: 0 1.6rem 0 1.6rem;
+    //tablet
+    @include tablet {
+      padding: 0 2.4rem;
     }
 
-
-
-
-    &--links {
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        font-weight: 100;
-        color: $primary-white;
-        text-decoration: none;
-
-        //tablet
-        @include tablet {
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-        }
+    @include desktop {
+      padding: 0 13.6rem;
     }
+  }
 
-    &--white {
-        color: $primary-white;
-        padding: 0 1.6rem 0 1.6rem;
-
-        
+  &__Regular {
+    padding-left: 1.6rem;
+    font-size: 2.4rem;
+    @include tablet {
+      float: right;
+      position: relative;
+      right: 36px;
+      bottom: 250px;
     }
-
-    &--black {
-        color: $primary-black;
-        padding: 0 1.6rem 0 1.6rem;
-        //tablet
-         @include tablet {
-          padding: 0 2.4rem;
-             }
-             @include desktop{
-                padding: 0 13.6rem;
-             }
+    @include desktop {
+      float: right;
+      position: relative;
+      right: 150px;
+      bottom: 250px;
     }
+  }
 
-    &__Regular {
-        padding-left: 1.6rem;
-        font-size: 2.4rem;
-        @include tablet{
-            float: right;
-            position: relative;
-            right: 36px;
-            bottom: 250px;
-        }
-        @include desktop{
-            float: right;
-            position: relative;
-            right: 150px;
-            bottom: 250px;
-        }
-       
-       
-
+  &--subheader {
+    padding: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    //tablet
+    @include tablet {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 600;
     }
-
-    &--subheader {
-        padding: 1.6rem;
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        font-weight: 600;
-        //tablet
-        @include tablet{
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-            font-weight: 600;
-
-        }
-    }
+  }
 }
 
 .nav {
-    max-width: 192rem;
-    min-width: 100%;
+  max-width: 192rem;
+  min-width: 100%;
 
-    &__Items {
-        background-color: $primary-black;
-        color: $primary-white;
-        text-align: center;
+  &__Items {
+    background-color: $primary-black;
+    color: $primary-white;
+    text-align: center;
+
+    //tablet
+    @include tablet {
+      display: flex;
+      padding: 32px;
+    }
+    //desktop
+    @include desktop {
+      padding: 40px;
+      padding-left: 150px;
+    }
+
+    &__list {
+      display: flex;
+
+      justify-content: space-around;
+
+      //tablet
+      @include tablet {
+        padding-left: 24px;
+      }
+
+      &__links {
+        display: inline-block;
 
         //tablet
         @include tablet {
-            display: flex;
-            padding: 32px;
-
+          display: table-cell;
+          padding-left: 3.2rem;
         }
-          //desktop
-          @include desktop{
-            padding: 40px;
-            padding-left: 150px;
+        //desktop
+        @include desktop {
+          padding-left: 72px;
         }
-      
+      }
 
-
-        &__list {
-            display: flex;
-
-            justify-content: space-around;
-
-            //tablet
-            @include tablet {
-
-                padding-left: 24px;
-
-            }
-
-
-
-
-            &__links {
-
-                display: inline-block;
-
-
-                //tablet
-                @include tablet {
-                    display: table-cell;
-                    padding-left: 3.2rem;
-                }
-                //desktop
-                @include desktop{
-                    padding-left:72px;
-                }
-
-
-            }
-
-            &__links:active  {
-                text-decoration: underline;
-                color: $primary-white;
-
-            }
-            &__links:hover{
-                border: 1px dotted white;
-                color: $primary-white;
-            }
-        }
+      &__links a:hover {
+        font-weight: 1000;
+      }
     }
+  }
 
-    &__Bandsite {
-        text-align: center;
-        font-weight: 700;
-        text-decoration: none;
-        color: $primary-white;
-      
-    }
+  &__Bandsite {
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    color: $primary-white;
+  }
 }
 
 .header {
-    position: relative;
-    text-align: center;
-    color: white;
+  position: relative;
+  text-align: center;
+  color: white;
 
-
-    &__img {
-        width: -webkit-fill-available;
-    }
-
-
-
+  &__img {
+    width: -webkit-fill-available;
+  }
 }
 
-.main__photo{
+.main {
+  &__photo {
     width: -webkit-fill-available;
     padding-bottom: 32px;
-}
-.main__musicians {
-    padding-top: 24px 0 16px 0;
-    //tablet
-    @include tablet{
-        padding: 0 8rem;
-
-    }
-    @include desktop{
-        padding: 0 24rem;
-    }
-
-}
-
-.main__musiciansText {
+  }
+  &__musiciansText {
     font-size: 1.4rem;
     line-height: 2.2rem;
     font-weight: 400;
     padding: 1.6rem 1.6rem 0 1.6rem;
 
-      &--lastPart{
-        @include tablet{
-            font-size: 1.4rem;
-            line-height: 2.2rem;
-            font-weight: 700;
-
-        }
-
+    &--lastPart {
+      @include tablet {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        font-weight: 700;
       }
-
-
- 
-      &--Bold {
-     font-weight: 600;
-         //tablet
-         @include tablet{
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-         }
- 
     }
 
-    &--Regular{
-     @include tablet {
-         column-count: 2;
-         column-gap: 5rem;}
-       
-        
-   }
+    &--Bold {
+      font-weight: 600;
+      //tablet
+      @include tablet {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+      }
+    }
+
+    &--Regular {
+      @include tablet {
+        column-count: 2;
+        column-gap: 5rem;
+      }
+    }
+  }
 }
 
-.gallery{
-  padding: 1.6rem 0 ;
-   @include tablet{
-    padding:   4.8rem  3.6rem 3.6rem 3.6rem ;
-   }
-}
-.gallery__photo {
+.gallery {
+  padding: 1.6rem 0;
+  @include tablet {
+    padding: 4.8rem 3.6rem 3.6rem 3.6rem;
+  }
+  &__photo {
     width: -webkit-fill-available;
     padding: 2.4rem 1.6rem 0rem 1.6rem;
     filter: grayscale(1);
 
-    
-    @include tablet{
-        width: 28%;
-        
-    }
-
-
-}
-.gallery__photo:hover {
-    filter: none;
-}
-.galleryBox1{
-    @include tablet{
-        display: f;
-    }
-}
-.galleryBox{
     @include tablet {
-   display: unset;
-   align-content: flex-start;
-   flex-wrap: wrap;
-   
-
-        
-
+      width: 28%;
     }
+  }
+  &__photo:hover {
+    filter: none;
+  }
+}
+
+.galleryBox {
+  @include tablet {
+    display: unset;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+.ConversationForm {
+  display: block;
+  margin: 1.6rem;
+}
+
+label,
+input {
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  border-color: $secondary-mercury;
+}
+
+.field {
+  display: inline-flex;
+  border: none;
+  width: -webkit-fill-available;
+  @include tablet {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  @include desktop {
+    margin-left: 380px;
+    margin-right: 380px;
+  }
+
+  &__labelText {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  &__img {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin-top: 3rem;
+  }
+  &__sec {
+    margin: 8px;
+    &--wall {
+      display: block;
+    }
+  }
+}
+
+.wallForm {
+  margin: 1rem;
+  &__buttom {
+    color: $primary-white;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 6rem;
+    background-color: $primary-black;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+    @include tablet {
+      float: right;
+    }
+    @include desktop {
+      float: right;
+    }
+  }
+}
+
+#comments {
+  width: 100%;
+  height: 8rem;
+  @include tablet {
+    width: 100%;
+  }
+}
+#fullName {
+  width: 100%;
+  height: 4rem;
 }
 
 .footer {
-    background-color: $primary-black;
-    color: $primary-white;
-    
-   &__box2{
-    @include tablet{
-        
-        columns: 3;
-      
-       
-        
-        
+  background-color: $primary-black;
+  color: $primary-white;
+
+  &__box2 {
+    @include tablet {
+      columns: 3;
     }
-   }
-   &__box1{
+  }
+  &__box1 {
     padding: 36px 0;
-    
-    @include tablet{
-        display: flex;
-        
+
+    @include tablet {
+      display: flex;
     }
+  }
 
-   }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
 
-
-   
-
-    &__icon {
-        width: 2.5rem;
-        height: 2.5rem;
-        display: flex;
-
-        &__link {
-            padding: 0 2.4rem .8rem 1.6rem;
-        }
+    &__link {
+      padding: 0 2.4rem 0.8rem 1.6rem;
     }
+  }
 
-    &__Info {
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        font-weight: 400;
-        padding-bottom: 1.6rem;
-        padding-left: 1.6rem;
-        
+  &__Info {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    padding-bottom: 1.6rem;
+    padding-left: 1.6rem;
 
-        &--Bold {
-
-            font-weight: 700;
-
-        }
+    &--Bold {
+      font-weight: 700;
     }
+  }
 }
-.emils{
-    text-decoration: none;
-    color: $primary-white;
+.emils {
+  text-decoration: none;
+  color: $primary-white;
+}
+.post {
+  @extend .main__musiciansText;
+}
+span {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+#bio {
+  border-bottom: solid $primary-white;
+}
+.nameDatetBox {
+  display: flex;
+  justify-content: space-between;
+}
+.post {
+  display: inline-flex;
+  width: -webkit-fill-available;
+  border-bottom: 1px solid #afafaf;
+  @include tablet {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  @include desktop {
+    margin-left: 380px;
+    margin-right: 380px;
+  }
+  &__name {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  &__date {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    color: $primary-silver;
+  }
+  &__comment {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+  &__img {
+    display: block;
+
+    margin: 8px;
+
+    @extend .field__img;
+  }
 }

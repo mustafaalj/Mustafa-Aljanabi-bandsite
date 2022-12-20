@@ -1,0 +1,225 @@
+/* primary colors*/
+/* secondary colors*/
+@font-face {
+  font-family: "avenir";
+  src: url(../assets/Font/AvenirNextLTPro-Regular.otf);
+}
+html {
+  font-family: "avenir";
+  font-size: 10px;
+}
+
+.headerShow__img {
+  width: 100%;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 600px) {
+  .headerShow__img {
+    height: 480px;
+  }
+}
+@media (min-width: 1200px) {
+  .headerShow__img {
+    height: 1000px;
+  }
+}
+.headerShow__music {
+  width: 80%;
+  position: absolute;
+  top: 26%;
+  right: 10%;
+}
+@media (min-width: 600px) {
+  .headerShow__music {
+    width: 53%;
+    position: absolute;
+    top: 56%;
+    left: 6%;
+  }
+}
+@media (min-width: 1200px) {
+  .headerShow__music {
+    width: 35%;
+    position: absolute;
+    top: 56%;
+    left: 58%;
+  }
+}
+.headerShow__text {
+  color: #ffffff;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  font-size: 1.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  .headerShow__text {
+    position: absolute;
+    top: 24%;
+    left: 6%;
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .headerShow__text {
+    position: absolute;
+    top: 48%;
+    left: 8%;
+    font-size: 3.6rem;
+  }
+}
+.headerShow__text--bold {
+  position: absolute;
+  top: 13%;
+  left: 6%;
+  font-size: 2.4rem;
+}
+@media (min-width: 600px) {
+  .headerShow__text--bold {
+    position: absolute;
+    top: 30%;
+    left: 6%;
+    font-size: 6rem;
+    line-height: 68px;
+  }
+}
+@media (min-width: 1200px) {
+  .headerShow__text--bold {
+    position: absolute;
+    top: 56%;
+    left: 8%;
+    font-size: 6rem;
+    line-height: 68px;
+    font-weight: 700;
+  }
+}
+
+.tickets__text {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  color: #323232;
+  padding: 28px;
+}
+@media (min-width: 600px) {
+  .tickets__text {
+    font-size: 3.6rem;
+    padding-left: 48px;
+  }
+}
+.tickets__card {
+  border-bottom: 1px solid #afafaf;
+  padding: 16px;
+  padding: 2.4rem 1.8rem;
+}
+@media (min-width: 600px) {
+  .tickets__card {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets__card {
+    margin-left: 390px;
+    margin-right: 80px;
+  }
+}
+.tickets__card--tablet {
+  display: none;
+}
+@media (min-width: 600px) {
+  .tickets__card--tablet {
+    display: flex;
+    justify-content: center;
+    white-space: 100px;
+  }
+}
+.tickets__card__subject {
+  color: #afafaf;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  .tickets__card__subject {
+    display: none;
+  }
+}
+.tickets__card__subject--black {
+  color: #323232;
+}
+@media (min-width: 600px) {
+  .tickets__card__subject--black {
+    display: block;
+  }
+}
+.tickets__card__button {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  .tickets__card__button {
+    width: 150px;
+  }
+}
+
+.tablet {
+  display: none;
+}
+@media (min-width: 600px) {
+  .tablet {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 700;
+    color: #afafaf;
+  }
+  .tablet__data {
+    position: absolute;
+    left: 10%;
+  }
+  .tablet__venue {
+    position: absolute;
+    left: 29.5%;
+  }
+  .tablet__location {
+    position: absolute;
+    left: 51%;
+  }
+}
+@media (min-width: 1200px) {
+  .tablet {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 700;
+    color: #afafaf;
+  }
+  .tablet__data {
+    position: absolute;
+    left: 27%;
+  }
+  .tablet__venue {
+    position: absolute;
+    left: 46%;
+  }
+  .tablet__location {
+    position: absolute;
+    left: 64%;
+  }
+}
+
+#shows {
+  border-bottom: solid #ffffff;
+}/*# sourceMappingURL=show.css.map */
