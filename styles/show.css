@@ -222,4 +222,12 @@ html {
 
 #shows {
   border-bottom: solid #ffffff;
+}
+
+.showList :hover {
+  background-color: #fafafa;
+}
+
+.showList :active {
+  background-color: #e1e1e1;
 }/*# sourceMappingURL=show.css.map */

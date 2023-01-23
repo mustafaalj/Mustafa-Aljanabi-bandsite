@@ -1,35 +1,24 @@
-let shows = [
-  {
-    Date: "Mon Sept 06 2021",
-    Venue: "Ronald Lane",
-    Location: "San Francisco,CA",
-  },
-  {
-    Date: "Tue Sept 21 2021",
-    Venue: "Pier East",
-    Location: "San Francisco,CA",
-  },
-  {
-    Date: "Fri Oct 15 2021",
-    Venue: "View Lounge",
-    Location: "San Francisco,CA",
-  },
-  {
-    Date: "Sat Nov 06 2021",
-    Venue: "Hyatt Agency",
-    Location: "San Francisco,CA",
-  },
-  {
-    Date: "Fri Nov 26 2021",
-    Venue: "Moscow Center",
-    Location: "San Francisco,CA",
-  },
-  {
-    Date: "Wed Dec 15 2021",
-    Venue: "Press Club",
-    Location: "San Francisco,CA",
-  },
-];
+getRegistration();
+function getRegistration() {
+  axios
+    .get("https://project-1-api.herokuapp.com/register")
+    .then((response) => {
+      // to get new API key
+      // apiKey = response.data
+
+      (apiKey = "81b96784-7a13-457d-9922-b13aa8da1f21"), showdates();
+    })
+    .catch((error) => console.error(error));
+}
+function showdates() {
+  axios
+    .get("https://project-1-api.herokuapp.com/showdates?api_key=" + apiKey)
+    .then((response) => {
+      shows = response.data;
+      renderShows();
+    })
+    .catch((error) => console.error(error));
+}
 
 let headers = [
   {
@@ -48,35 +37,35 @@ function renderShows() {
 }
 
 function displayAllShows(show, headers) {
-  const showsArticle = document.createElement("article");
-  showsArticle.className = "tickets__card";
+  const showsArticle = createElement("article", "tickets__card", null);
 
-  const showDateLabel = document.createElement("p");
-  showDateLabel.className = "tickets__card__subject";
-  showDateLabel.innerText = headers.Date;
+  showDateLabel = createElement("p", "tickets__card__subject", headers.Date);
 
-  const showDateValue = document.createElement("p");
-  showDateValue.className =
-    "tickets__card__subject tickets__card__subject--black";
-  showDateValue.innerText = show.Date;
+  showVenueLabel = createElement("p", "tickets__card__subject", headers.Venue);
 
-  const showVenueLabel = document.createElement("p");
-  showVenueLabel.className = "tickets__card__subject";
-  showVenueLabel.innerText = headers.Venue;
+  showVenueValue = createElement(
+    "p",
+    "tickets__card__subject tickets__card__subject--black",
+    show.place
+  );
 
-  const showVenueValue = document.createElement("p");
-  showVenueValue.className =
-    "tickets__card__subject tickets__card__subject--black";
-  showVenueValue.innerText = show.Venue;
+  showLocationLabel = createElement(
+    "p",
+    "tickets__card__subject",
+    headers.Location
+  );
 
-  const showLocationLabel = document.createElement("p");
-  showLocationLabel.className = "tickets__card__subject";
-  showLocationLabel.innerText = headers.Location;
+  showLocationValue = createElement(
+    "p",
+    "tickets__card__subject tickets__card__subject--black",
+    show.location
+  );
 
-  const showLocationValue = document.createElement("p");
-  showLocationValue.className =
-    "tickets__card__subject tickets__card__subject--black";
-  showLocationValue.innerText = show.Location;
+  showDateValue = createElement(
+    "p",
+    "tickets__card__subject tickets__card__subject--black",
+    convertTimestampToDate(show.date)
+  );
 
   const showBuyTicket = document.createElement("button");
   showBuyTicket.classList = "tickets__card__button";
@@ -95,4 +84,20 @@ function displayAllShows(show, headers) {
   return showsArticle;
 }
 
-renderShows();
+function convertTimestampToDate(timeStamp) {
+  let date = new Date(timeStamp);
+  let dateString = date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  return dateString;
+}
+
+function createElement(element, className, innerText) {
+  const showLabel = document.createElement(element);
+  showLabel.className = className;
+  showLabel.innerText = innerText;
+  return showLabel;
+}

@@ -283,6 +283,10 @@ input {
   display: block;
 }
 
+.wall {
+  width: calc(100% - 16px);
+}
+
 .wallForm {
   margin: 1rem;
 }
@@ -381,18 +385,20 @@ span {
 }
 
 .post {
-  display: inline-flex;
-  width: -webkit-fill-available;
+  display: flex;
+  width: calc(100vw - 3.2rem);
   border-bottom: 1px solid #afafaf;
 }
 @media (min-width: 600px) {
   .post {
+    width: calc(100vw - 20rem);
     margin-left: 70px;
     margin-right: 70px;
   }
 }
 @media (min-width: 1200px) {
   .post {
+    width: calc(100vw - 82rem);
     margin-left: 380px;
     margin-right: 380px;
   }
@@ -410,11 +416,17 @@ span {
   color: #afafaf;
 }
 .post__comment {
+  display: block;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
 }
 .post__img {
   display: block;
+  background-color: #e1e1e1;
   margin: 8px;
+}
+
+.nameCommentBox {
+  width: 100%;
 }/*# sourceMappingURL=bio.css.map */

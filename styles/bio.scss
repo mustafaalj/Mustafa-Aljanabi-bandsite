@@ -233,6 +233,7 @@ html {
     display: unset;
     align-content: flex-start;
     flex-wrap: wrap;
+    
   }
 }
 .ConversationForm {
@@ -278,7 +279,9 @@ input {
     }
   }
 }
-
+.wall{
+  width: calc(100% - 16px );
+}
 .wallForm {
   margin: 1rem;
   &__buttom {
@@ -369,16 +372,27 @@ span {
 .nameDatetBox {
   display: flex;
   justify-content: space-between;
+  
 }
 .post {
-  display: inline-flex;
-  width: -webkit-fill-available;
+display: flex;
+width: calc(100vw - 3.2rem);
+
+
+  
+  
+
+  
   border-bottom: 1px solid #afafaf;
   @include tablet {
+    width: calc(100vw - 20rem);
     margin-left: 70px;
     margin-right: 70px;
+    
+    
   }
   @include desktop {
+    width: calc(100vw - 82rem);
     margin-left: 380px;
     margin-right: 380px;
   }
@@ -395,15 +409,20 @@ span {
     color: $primary-silver;
   }
   &__comment {
+    display: block;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
   }
   &__img {
     display: block;
+    background-color:#e1e1e1 ;
 
     margin: 8px;
 
     @extend .field__img;
   }
+}
+.nameCommentBox{
+  width: 100%;
 }
